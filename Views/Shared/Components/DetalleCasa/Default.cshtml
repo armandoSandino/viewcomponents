@@ -1,0 +1,35 @@
+
+@model ViewComponents.Models.DetalleCasa
+
+
+<div class="col-md-12 mb-2">
+<div class="card" style="border: black 2px solid">
+
+<div class="card-header  p-3">
+<h6 sytle="text-color:black"> Detalles de la casa @ViewBag.ID_CASA </h6>
+</div>
+
+<div class="card-body">
+<h5 class="card-title"> 
+@ViewBag.loca_house 
+</h5>
+<br/>
+
+<p class="card-text">Dimensiones @Model.Dimensiones </p>
+<br/>
+<p class="card-text">#  de cuartos @Model.Cuartos </p>
+<br/>
+<p class="card-text">
+ <small>
+ Baños @Model.Baños 
+ </small>
+ </p>
+</div>
+
+<div class="card-footer" style="background:green">
+
+</div>
+
+
+</div>
+</div>

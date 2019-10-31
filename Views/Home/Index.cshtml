@@ -1,0 +1,36 @@
+﻿
+
+@model List<ViewComponents.Models.Casa>
+<!--con esto le diremos a nuestra vista que reciba un modelo de datos-->
+
+@{
+    ViewData["Title"] = "Mira lo que la gente dice de nosotros";
+}
+<br/>
+<h1>Todas las casas disponibles para venta o alquiler</h1>
+<br/>
+<div class="row mt-2">
+@for(int i=0; i < Model.Count; i++)
+{
+@Html.DisplayFor(model => model[i] )
+}
+</div>
+
+@section LateralIzquierdo{
+
+@if(ViewBag.ID  != 0)
+{
+    @await Component.InvokeAsync("DetalleCasa", 
+    new { id = @ViewBag.ID } )
+}
+
+}
+
+@section LateralDerecho {
+
+    <h5>Sorftweb LABs y Sarah Solutions</h5>
+    <p>Empresas Nicaragüense que fortalecen lazos en la innovación y desarrollo tecnológico a gran escala,
+    para aportar al crecimiento del país y la región.
+    </p>
+
+}
